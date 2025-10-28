@@ -110,8 +110,8 @@ int main(int argc,char** argv){
     long t1,t2;
     t1=time(NULL);
 
-    pthread_t* threadHandles = malloc(threadCount*sizeof(pthread_t));
     threadCount = strtol(argv[3], NULL, 10); // Get number of threads from command line
+    pthread_t* threadHandles = malloc(threadCount*sizeof(pthread_t));
     struct threadArgs* t_args = malloc(threadCount * sizeof(struct threadArgs));
 
     stbi_set_flip_vertically_on_load(0); 
