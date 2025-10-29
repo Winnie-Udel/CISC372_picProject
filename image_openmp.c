@@ -64,8 +64,9 @@ void convolute(Image* srcImage,Image* destImage,Matrix algorithm){
 
     #pragma omp parallel for num_threads(threadCount) schedule(static)
     for (row=0;row<srcImage->height;row++){
-        for (int pix=0;pix<srcImage->width;pix++){
-            for (int bit=0;bit<srcImage->bpp;bit++){
+        int pix, bit; 
+        for (pix=0;pix<srcImage->width;pix++){
+            for (bit=0;bit<srcImage->bpp;bit++){
                 destImage->data[Index(pix,row,srcImage->width,bit,srcImage->bpp)]=getPixelValue(srcImage,pix,row,bit,algorithm);
             }
         }
