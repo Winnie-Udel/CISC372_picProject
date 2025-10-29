@@ -1,6 +1,7 @@
 {
   "C_Cpp.default.compilerPath": "",
   "files.associations": {
-    "stb_image.h": "c"
+    "stb_image.h": "c",
+    "stb_image_write.h": "c"
   }
 }
