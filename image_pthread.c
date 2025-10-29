@@ -133,8 +133,10 @@ int main(int argc,char** argv){
     destImage.data=malloc(sizeof(uint8_t)*destImage.width*destImage.bpp*destImage.height);
 
     int rowsPerThread = srcImage.height / threadCount; // Divide rows of image among all threads
-    
-    for (int i=0;i<threadCount;i++) {
+
+    int i; 
+
+    for (i=0;i<threadCount;i++) {
         t_args[i].srcImage = &srcImage;
         t_args[i].destImage = &destImage;
         // Selected convolution kernel is copied onto this thread's struct
@@ -156,7 +158,7 @@ int main(int argc,char** argv){
         pthread_create(&threadHandles[i],NULL,&convolute,&t_args[i]);
     }
 
-    for (int i=0;i<threadCount;i++) {
+    for (i=0;i<threadCount;i++) {
         pthread_join(threadHandles[i], NULL);
     }
  
