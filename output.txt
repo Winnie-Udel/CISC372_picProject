@@ -1,0 +1,8 @@
+[winnie@r1n08 CISC372_picProject]$ srun image_pthread pic1.jpg sharpen 10
+Took 6 seconds
+[winnie@r1n08 CISC372_picProject]$ srun image_openmp pic1.jpg sharpen 10
+Took 7 seconds
+[winnie@r1n08 CISC372_picProject]$ exit
+exit
+
+Script done on Wed Oct 29 13:03:41 2025
